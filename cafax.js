@@ -41,7 +41,7 @@ var locAccesoALaTrampa = ctrl.lugares.creaLoc(
 );
 locAccesoALaTrampa.pic = "res/sala_trampa.png";
 
-var objTrampaFalsa = ctrl.creaObj(
+ctrl.creaObj(
     "trampa",
     [ "acceso", "cuchillos" ],
     "Supones que es el acceso a Aceps. Parece creada para eliminar a los intrusos.",
@@ -101,7 +101,7 @@ locAntesala.preGo = function() {
         }
 
         return toret;
-}
+};
 
 var objSerpiente = ctrl.creaObj(
         "serpiente",
@@ -128,11 +128,11 @@ objSerpiente.preExamine = function() {
         }
 
         return toret;
-}
+};
 
 objSerpiente.preAttack = function() {
     return acciones.ejecuta( "take", "serpiente" );
-}
+};
 
 objSerpiente.preTake = function() {
     var toret = "La serpiente casi te muerde al acercar t&uacute; la \
@@ -147,7 +147,7 @@ objSerpiente.preTake = function() {
     }
 
     return toret;
-}
+};
 
 objSerpiente.preTouch = function() {
     return actions.execute( "take", "serpiente" );
@@ -195,9 +195,9 @@ locEscaleras.luz = true;
 locEscaleras.pic = "res/escaleras.png";
 locEscaleras.preEnter = function() {
     return actions.execute( "go", "sur" );
-}
+};
 
-var objFalsoDesierto = ctrl.creaObj(
+ctrl.creaObj(
     "desierto",
     [ "desierto", "arena", "arenas", "sol", "nube", "nubes", "cielo" ],
     "El desierto se extiende hacia el ${norte, n}, plet&oacute;rico de arena y sol.",
@@ -216,7 +216,7 @@ var objEscaleras = ctrl.creaObj(
 
 objEscaleras.preEnter = function() {
     return actions.execute( "go", "sur" );
-}
+};
 
 var locEstancia = ctrl.lugares.creaLoc(
     "Estancia",
@@ -256,20 +256,20 @@ objVasijas.preAttack = function() {
     }
 
     return toret;
-}
+};
 
 objVasijas.preShake = function() {
     return "Por mucho que las sacudes, el trigo no sale, son demasiado pesadas, \
             y sus bocas son demasiado peque&ntilde;as.";
-}
+};
 
 objVasijas.prePull = function() {
     return actions.execute( "take", "vasijas" );
-}
+};
 
 objVasijas.prePush = function() {
     return actions.execute( "take", "vasijas" );
-}
+};
 
 objVasijas.preExamine = function() {
     var toret = objVasijas.desc;
@@ -279,7 +279,7 @@ objVasijas.preExamine = function() {
     }
 
     return toret;
-}
+};
 
 objVasijas.preTake = function() {
     var toret = "Son demasiado pesadas.";
@@ -289,7 +289,7 @@ objVasijas.preTake = function() {
     }
 
     return toret;
-}
+};
 
 var objTrigoFalso = ctrl.creaObj(
     "trigo",
@@ -309,7 +309,7 @@ objTrigoFalso.preTake = function() {
     }
 
     return toret;
-}
+};
 
 
 var objTrigo = ctrl.creaObj(
@@ -337,7 +337,7 @@ objTrigo.preDrop = function() {
     }
 
     return toret;
-}
+};
 
 var locEstrechoPasadizo = ctrl.lugares.creaLoc(
     "Estrecho pasadizo",
@@ -384,7 +384,7 @@ var locLargoCorredor = ctrl.lugares.creaLoc(
 );
 locLargoCorredor.pic = "res/corredor.png";
 locLargoCorredor.doEachTurn = function() {
-    var player = ctrl.personas.getPlayer();
+    var jugador = ctrl.personas.devJugador();
 
     if ( !( jugador.hayLuz() ) ) {
         ctrl.goto( locEscaleras );
@@ -392,7 +392,7 @@ locLargoCorredor.doEachTurn = function() {
     }
 
     return;
-}
+};
 
 var locAnexoAutores = ctrl.lugares.creaLoc(
     "Anexo",
@@ -403,9 +403,9 @@ var locAnexoAutores = ctrl.lugares.creaLoc(
 );
 locAnexoAutores.pic = "res/aceps_autores.png";
 
-var objArte = ctrl.creaObj(
-    "imagen",
-    [ "imagen", "autores", "arte", "autor" ],
+ctrl.creaObj(
+    "arte",
+    [ "imagen", "autores", "autor", "cara", "caras" ],
     "Parecen caras de personas atrapadas en el tiempo...",
     locAnexoAutores,
     Ent.Escenario
@@ -435,7 +435,7 @@ objBanco.preExamine = function() {
     }
 
     return toret;
-}
+};
 
 var locPasajeDeLosGrabados = ctrl.lugares.creaLoc(
     "Pasaje de los grabados",
@@ -474,9 +474,9 @@ locPasarela.preGo = function() {
     }
 
     return toret;
-}
+};
 
-var objPasarela = ctrl.creaObj(
+ctrl.creaObj(
     "pasarela",
     [ "puente", "colgante" ],
     "El tiempo no la ha tratado demasiado bien. La madera no tiene buen aspecto, si bien las cuerdas parecen aguantar bastante bien.",
@@ -484,7 +484,7 @@ var objPasarela = ctrl.creaObj(
     Ent.Escenario
 );
 
-var objAbismo = ctrl.creaObj(
+ctrl.creaObj(
     "abismo",
     [ "insondable", "sima", "oscuridad", "precipicio", "vacio", "caida" ],
     "Uy, miedo me da.",
@@ -510,7 +510,7 @@ var locPozoDeLasAlmas = ctrl.lugares.creaLoc(
 );
 locPozoDeLasAlmas.pic = "res/pozo.png";
 
-var objCuerdaFalsa = ctrl.creaObj(
+ctrl.creaObj(
     "cuerda",
     [ "cuerda", "soga" ],
     "La cuerda cuelga hasta tus pies, atada a un poste de sala del sepulcro.",
@@ -562,9 +562,9 @@ locSalaDeLaLuminaria.preGo = function() {
     }
 
     return goAction.exe( s );
-}
+};
 
-var objHuecoLuminaria = ctrl.creaObj(
+ctrl.creaObj(
     "hueco",
     [ "hueco", "luminaria", "brasas", "carboncillos", "carbones",
       "carbon", "brasa", "pared", "paredes" ],
@@ -612,9 +612,9 @@ locSalaDeLaMomia.doEachTurn = function() {
 
     ++locSalaDeLaMomia.contadorMomia;
     return;
-}
+};
 
-var objGrabadosMomia = ctrl.creaObj(
+ctrl.creaObj(
     "grabados",
     [ "jerofligico", "grabado", "jeroglificos", "simbolo", "simbolos" ],
     "Los grabados indican que esta momia era el sacerdote mayor \
@@ -650,31 +650,31 @@ objMomia.ponAlcanzable( false );
 
 objMomia.prePush = function() {
     return "&iexcl;No me acerco ni loco!";
-}
+};
 
 objMomia.prePull = function() {
     return actions.execute( "push", "momia" );
-}
+};
 
 objMomia.preStart = function() {
     return actions.execute( "push", "momia" );
-}
+};
 
 objMomia.preShutdown = function() {
     return actions.execute( "push", "momia" );
-}
+};
 
 objMomia.preAttack = function() {
     return "No puedes... el miedo te paraliza.";
-}
+};
 
 objMomia.preTalk = function() {
     return "Lo intentas un rato, pero... &iexcl;no atiende a razones!";
-}
+};
 
 objMomia.preTake = function() {
     return actions.execute( "push", "momia" );
-}
+};
 
 var objLlave = ctrl.creaObj(
     "llave",
@@ -697,7 +697,7 @@ objLlave.preTake = function() {
     }
 
     return toret;
-}
+};
 
 var locSalaDeLaVidaEterna = ctrl.lugares.creaLoc(
     "Sala de la vida eterna",
@@ -708,7 +708,7 @@ var locSalaDeLaVidaEterna = ctrl.lugares.creaLoc(
 );
 locSalaDeLaVidaEterna.pic = "res/sala_funeraria.png";
 
-var objGrabadosVidaEterna = ctrl.creaObj( "grabados",
+ctrl.creaObj( "grabados",
     [ "grabados", "jeroglificos", "jerofligico", "grabado" ],
     "El per&iacute;odo de esta pir&aacute;mide te resulta extra&ntilde;amente \
      indeterminado. No eres capaz de descifrar gran cosa de estos grabados.",
@@ -716,7 +716,7 @@ var objGrabadosVidaEterna = ctrl.creaObj( "grabados",
     Ent.Escenario
 );
 
-var objAnimales = ctrl.creaObj( "momias",
+ctrl.creaObj( "momias",
     [ "animales", "animal", "momia" ],
     "Interesantes las momias de animales de todo tipo a tu alrededor. \
      Extra&ntilde;a creencia la de que incluso tus mascotas te acompa&ntilde;ar&aacute;n \
@@ -750,7 +750,7 @@ objSemillas.preDrop = function() {
     }
 
     return toret;
-}
+};
 
 var locSalaDeLosVivos = ctrl.lugares.creaLoc(
     "Sala de los vivos",
@@ -763,7 +763,7 @@ var locSalaDeLosVivos = ctrl.lugares.creaLoc(
 );
 locSalaDeLosVivos.pic = "res/sala_anubis.png";
 
-var objAnubis = ctrl.creaObj(
+ctrl.creaObj(
     "anubis",
     [ "dios", "inscripciones", "jeroglificos", "petroglifos" ],
     "Anubis recuerda el goce de la vida.",
@@ -800,9 +800,9 @@ locSalaDelCofre.preGo = function() {
     }
 
     return goAction.exe( s );
-}
+};
 
-var objGrabadosCofre = ctrl.creaObj(
+ctrl.creaObj(
     "grabados",
     [ "grabados", "grabado", "jeroglificos", "jerofligico" ],
     "Los grabados no parecen claros, hablan de un brebaje de la virtud que el sacerdote no pudo encontrar.",
@@ -810,7 +810,7 @@ var objGrabadosCofre = ctrl.creaObj(
     Ent.Escenario
 );
 
-var objRecipientes = ctrl.creaObj(
+ctrl.creaObj(
     "recipientes",
     [ "recipientes", "recipiente", "aceite", "llama", "llamas", "fuego" ],
     "Contienen aceite sagrado, manteniendo una llama sempiterna.",
@@ -828,23 +828,23 @@ var objRanura = ctrl.creaObj(
 
 objRanura.preOpen = function() {
     return actions.execute( "open", "cofre" );
-}
+};
 
 objRanura.preAttack = function() {
     return actions.execute( "attack", "cofre" );
-}
+};
 
 objRanura.prePush = function() {
     return actions.execute( "push", "cofre" );
-}
+};
 
 objRanura.prePull = function() {
     return actions.execute( "pull", "cofre" );
-}
+};
 
 objRanura.preStart = function() {
     return actions.execute( "start", "cofre" );
-}
+};
 
 var objCofre = ctrl.creaObj(
     "cofre",
@@ -866,11 +866,11 @@ objCofre.preExamine = function() {
 
     toret += examineAction.exe( parser.sentence );
     return toret;
-}
+};
 
 objCofre.preClose = function() {
     return "&iexcl;No podr&iacute;as mover la gran tapa de piedra!"
-}
+};
 
 objCofre.preOpen = function() {
     var msg = "";
@@ -887,23 +887,23 @@ objCofre.preOpen = function() {
     }
 
     return msg;
-}
+};
 
 objCofre.preAttack = function() {
     return "Es in&uacute;til. &iexcl;Es de piedra!";
-}
+};
 
 objCofre.prePush = function() {
     return actions.execute( "attack", "cofre" );
-}
+};
 
 objCofre.prePull = function() {
     return actions.execute( "attack", "cofre" );
-}
+};
 
 objCofre.preStart = function() {
     return actions.execute( "attack", "cofre" );
-}
+};
 
 var locSalaDelDiosRey = ctrl.lugares.creaLoc(
     "Sala del dios rey",
@@ -925,7 +925,7 @@ var locSalaDelEspacio = ctrl.lugares.creaLoc(
 );
 locSalaDelEspacio.pic = "res/sala_hueco_pared.png";
 
-var objHueco = ctrl.creaObj(
+ctrl.creaObj(
     "hueco",
     [ "espacio", "ventanal", "ventana", "abertura" ],
     "Una abertura por la que se puede ver un altar.",
@@ -967,9 +967,9 @@ locSalaDelSepulcro.preGo = function() {
     }
 
     return toret;
-}
+};
 
-var objAbajo = ctrl.creaObj(
+ctrl.creaObj(
     "pozo",
     [ "pozo", "abajo", "negrura", "tinieblas" ],
     "Hacia abajo hay un pozo. A tu lado, sobre el pozo, asoma un ${poste, ex poste}. \
@@ -1002,7 +1002,7 @@ objSepulcro.preExamine = function() {
     }
 
     return toret;
-}
+};
 
 var objTapa = ctrl.creaObj(
     "tapa",
@@ -1024,11 +1024,11 @@ objTapa.prePush = function() {
     }
 
     return toret;
-}
+};
 
 objTapa.prePull = function() {
     return "No puedes hacer mucha fuerza as&iacute;. Quiz&aacute;s empujando...";
-}
+};
 
 var objAnillo = ctrl.creaObj(
     "anillo",
@@ -1057,13 +1057,13 @@ objAnillo.preDrop = function() {
             objSepulcro.conAnillo = true;
             objAnillo.moveTo( objSepulcro );
         } else {
-            toret = "Hecho."
+            toret = "Hecho.";
             objAnillo.moveTo( loc );
         }
     }
 
     return toret;
-}
+};
 
 objAnillo.preTake = function() {
     var toret = "";
@@ -1077,7 +1077,7 @@ objAnillo.preTake = function() {
     }
 
     return toret;
-}
+};
 
 var locSalaFuneraria = ctrl.lugares.creaLoc(
     "Sala funeraria",
@@ -1098,7 +1098,7 @@ var locTrampa = ctrl.lugares.creaLoc(
 );
 locTrampa.pic = "res/trampa.png";
 
-var objTrampa = ctrl.creaObj(
+ctrl.creaObj(
     "trampa",
     [ "abertura", "trampa", "cuchillos", "salida" ],
     "Tiene forma oblonga. Los cuchillos son realmente amenazadores.",
@@ -1106,7 +1106,7 @@ var objTrampa = ctrl.creaObj(
     Ent.Escenario
 );
 
-var objGrabadosSalida = ctrl.creaObj(
+ctrl.creaObj(
     "grabados",
     [ "pictogramas", "pictograma", "jerofligico", "jeroglificos",
       "simbolos", "ideograma", "ideogramas" ],
@@ -1145,7 +1145,7 @@ locTrampa.preGo = function() {
     }
 
     return toret;
-}
+};
 
 // *** Compas --
 
@@ -1275,7 +1275,7 @@ locTrampa.ponSalida( "norte", locAccesoALaTrampa );
 
 
 // *** Objs --
-var objMonumentos = ctrl.creaObj(
+ctrl.creaObj(
     "monumentos",
     [ "monumentos", "monumento", "sepulcros", "sepulcro", "cafax",
     "aceps", "piramides", "piramide" ],
@@ -1308,7 +1308,7 @@ objAceite.preTake = function() {
     }
 
     return toret;
-}
+};
 
 var objAltar = ctrl.creaObj(
     "altar",
@@ -1319,7 +1319,7 @@ var objAltar = ctrl.creaObj(
 );
 objAltar.ponContenedor( true );
 
-var objAltarFalso = ctrl.creaObj(
+ctrl.creaObj(
     "altar",
     [  ],
     "No puedes verlo bien del todo desde este lugar, pero se adivina de piedra.",
@@ -1339,7 +1339,6 @@ objAntorcha.encendida = false;
 objAntorcha.conAceite = false;
 objAntorcha.preExamine = function() {
     var toret = objAntorcha.desc;
-    var player = ctrl.personas.getPlayer();
 
     if ( objAntorcha.encendida ) {
         toret += " Est&aacute; encendida.";
@@ -1348,7 +1347,7 @@ objAntorcha.preExamine = function() {
     }
 
     return toret;
-}
+};
 
 
 objAntorcha.preStart = function() {
@@ -1377,11 +1376,11 @@ objAntorcha.preStart = function() {
     }
 
     return toret;
-}
+};
 
 objAntorcha.preShutdown = function() {
     return "En medio de la oscuridad... no ser&iacute;a una buena idea...";
-}
+};
 
 var objBarra = ctrl.creaObj(
     "barra",
@@ -1404,12 +1403,12 @@ objBarra.preExamine = function() {
         }
 
         return toret;
-}
+};
 
 objBarra.takeIt = function() {
     objBarra.moveTo( ctrl.personas.getPlayer() );
     return "Recoges la barra.";
-}
+};
 
 objBarra.preTake = function() {
         var toret = "";
@@ -1459,7 +1458,7 @@ objCuerda.preTie = function() {
     }
 
     return toret;
-}
+};
 
 objCuerda.atada = true;
 objCuerda.preExamine = function() {
@@ -1474,7 +1473,7 @@ objCuerda.preExamine = function() {
     }
 
     return toret;
-}
+};
 
 objCuerda.preTake = function() {
     var toret = "";
@@ -1490,7 +1489,7 @@ objCuerda.preTake = function() {
     }
 
     return toret;
-}
+};
 
 objCuerda.prePull = function() {
     var toret = "";
@@ -1503,11 +1502,11 @@ objCuerda.prePull = function() {
     }
 
     return toret;
-}
+};
 
 objCuerda.preUntie = function() {
     return actions.execute( "pull", "cuerda" );
-}
+};
 
 var objEspada = ctrl.creaObj(
     "espada",
@@ -1530,7 +1529,7 @@ objEspada.preTake = function() {
     }
 
     return toret;
-}
+};
 
 objEspada.preExamine = function() {
     var toret = objEspada.desc;
@@ -1542,7 +1541,7 @@ objEspada.preExamine = function() {
     }
 
     return toret;
-}
+};
 
 objEspada.preDrop = function() {
     var s = parser.sentence;
@@ -1558,9 +1557,9 @@ objEspada.preDrop = function() {
     }
 
     return toret;
-}
+};
 
-var objGlifos = ctrl.creaObj(
+ctrl.creaObj(
     "pictogramas",
     [ "glifos", "glifo", "pictogramas", "jeroglificos", "pictograma",
       "jeoriglifico", "simbolos", "simbolo" ],
@@ -1569,7 +1568,7 @@ var objGlifos = ctrl.creaObj(
     Ent.Escenario
 );
 
-var objGrabadosAltar = ctrl.creaObj(
+ctrl.creaObj(
     "grabados",
     [ "glifos", "jeroglificos", "simbolos", "pictogramas" ],
     "Lees, interesado: \"Y del sacerdocio desciende la espada del traidor, \
@@ -1578,7 +1577,7 @@ var objGrabadosAltar = ctrl.creaObj(
     Ent.Escenario
 );
 
-var objAgua = ctrl.creaObj(
+ctrl.creaObj(
     "agua",
     [ "charco", "encharcado", "suelo", "filtraciones", "filtracion" ],
     "Agua encharcada alrededor del altar... &iquest;Por qu&eacute;,\
@@ -1587,7 +1586,7 @@ var objAgua = ctrl.creaObj(
     Ent.Escenario
 );
 
-var objImagen = ctrl.creaObj(
+ctrl.creaObj(
     "imagen",
     [ "imagen" ],
     "Parece que el rey desea ponerse un anillo, pero de alguna forma \
@@ -1620,7 +1619,7 @@ objLinterna.preStart = function() {
         }
 
         return toret;
-}
+};
 
 objLinterna.preShutdown = function() {
         var toret = "No, la necesito para iluminar el camino...";
@@ -1630,7 +1629,7 @@ objLinterna.preShutdown = function() {
         }
 
         return toret;
-}
+};
 
 objLinterna.preExamine = function() {
         var toret = this.desc;
@@ -1642,11 +1641,11 @@ objLinterna.preExamine = function() {
         }
 
         return toret;
-}
+};
 
 objLinterna.preOpen = function() {
     return "Mmmmffff... no puedes... abrirla...";
-}
+};
 
 objLinterna.preShake = function() {
     var toret = "Escuchas el movimiento del aceite en el dep&oacute;sito, \
@@ -1657,9 +1656,9 @@ objLinterna.preShake = function() {
     }
 
     return toret;
-}
+};
 
-var objPapiro = ctrl.creaObj(
+ctrl.creaObj(
     "papiro",
     [ "papiro" ],
     "Compila antiguos ritos funerarios. Uno de ellos te suena por lo manido: \"La muerte, solo es el principio.\"",
@@ -1675,7 +1674,7 @@ var objPedernal = ctrl.creaObj(
         Ent.Portable
 );
 
-var objPetroglifos = ctrl.creaObj(
+ctrl.creaObj(
     "grabados",
     [ "petroglifo", "pegroglifos", "grabado",
       "jeroglificos", "jeroglifico", "simbolos", "simbolo",
@@ -1686,7 +1685,7 @@ var objPetroglifos = ctrl.creaObj(
     Ent.Escenario
 );
 
-var objPictogramas = ctrl.creaObj(
+ctrl.creaObj(
     "pictogramas",
     [ "pictogramas" ],
     "Parece imposible, pero... traduciendo poco a poco los pictogramas, parece ser que en este lugar yace el rey Aceps I. No puede ser...",
@@ -1705,7 +1704,7 @@ objPoste.ponContenedor( true );
 
 
 
-var objPozo = ctrl.creaObj(
+ctrl.creaObj(
     "pozo",
     [ "pozo" ],
     "La parte este de esta sala se configura como un ancho pozo, de cuyo fondo ascienden fuertes y delgadas columnas. Nunca ha aparecido algo como esto en tus expediciones, es raro...",
@@ -1733,11 +1732,11 @@ objPuertas.preExamine = function() {
         }
 
         return toret;
-}
+};
 
 objPuertas.preOpen = function() {
         return actions.execute( "open", "cerrojo" );
-}
+};
 
 var objCerrojo = ctrl.creaObj(
     "cerrojo",
@@ -1757,21 +1756,21 @@ objLlave.preDrop = function() {
         }
 
         return toret;
-}
+};
 
 objCerrojo.preOpen = function() {
         var player = ctrl.personas.getPlayer();
         var toret = "No ha ocurrido nada.";
         var s = parser.sentence;
 
-        // Â¿Ha especificado la llave?
+        // Llave especificada?
         if ( s.obj2 === null ) {
                 s.obj2 = objLlave;
         }
 
         // Abrir el cerrojo
         if ( objCerrojo.estaAbierto() ) {
-                toret = "Pero... Â¡si ya est&aacute; abierto!";
+                toret = "Pero... ¡si ya est&aacute; abierto!";
         }
         else
         if ( s.obj2 !== objLlave
@@ -1808,7 +1807,7 @@ objCerrojo.preOpen = function() {
         }
 
         return toret;
-}
+};
 
 var objRecipiente = ctrl.creaObj(
     "recipiente",
@@ -1831,7 +1830,7 @@ var objTabla = ctrl.creaObj(
     [ "tabla" ],
     "Madera podrida por el tiempo.",
     locDiminutaSala,
-        Ent.Portable
+    Ent.Portable
 );
 
 var objTumba = ctrl.creaObj(
@@ -1864,7 +1863,7 @@ objHerramientas.preExamine = function() {
     }
 
     return toret;
-}
+};
 
 objHerramientas.preSearch = function() {
         var toret = "No encuentras nada m&aacute;s que merezca la pena.";
@@ -1873,13 +1872,14 @@ objHerramientas.preSearch = function() {
                 objLinterna.moveTo( locEscaleras );
                 objPedernal.moveTo( locEscaleras );
 
+                ctrl.lugares.actualizaDesc();
                 toret = "Apartando lo in&uacute;til, descubres una \
                          ${linterna, coge linterna } y un ${ pedernal, \
                          coge pedernal}.";
         }
 
         return toret;
-}
+};
 
 var objRoca = ctrl.creaObj(
         "roca",
@@ -1905,20 +1905,20 @@ objRoca.preClimb = function() {
         }
 
         return toret;
-}
+};
 
 objRoca.preTake = function() {
         return "Pesa demasiado, apenas pudiste levantarla \
                 unos cent&iacute;metros, aunque probando a empujarla, \
                 comprobaste que puedes moverla a&uacute;n con \
                 bastante esfuerzo.";
-}
+};
 
 objRoca.prePull = function() {
         return "No puedes, pesa demasiado. S&iacute; que puedes empujarla \
                 aprovechando tu cuerpo para aplicar m&aacute;s \
                 fuerza."
-}
+};
 
 objRoca.prePush = function() {
         var toret = "La empujaste con todas tus fuerzas... ";
@@ -1960,7 +1960,7 @@ objRoca.prePush = function() {
         }
 
         return toret;
-}
+};
 
 // --- Jugador ---------------------------------------------------------
 var jugador = ctrl.personas.creaPersona( "Howard Carter",
@@ -1972,7 +1972,7 @@ var jugador = ctrl.personas.creaPersona( "Howard Carter",
 jugador.hayLuz = function() {
         return ( ( ctrl.isPresent( objAntorcha ) && objAntorcha.encendida )
               || ( ctrl.isPresent( objLinterna ) && objLinterna.encendida ) );
-}
+};
 
 jugador.preAction = function() {
     var toret = "";
@@ -1984,7 +1984,7 @@ jugador.preAction = function() {
     }
 
     return toret;
-}
+};
 
 jugador.postAction = function() {
     var loc = ctrl.lugares.getCurrentLoc();
@@ -2004,7 +2004,7 @@ jugador.postAction = function() {
              "res/cafax.png"
         );
     }
-}
+};
 
 jugador.getWeight = function(player) {
     if ( arguments.length == 0 ) {
@@ -2027,7 +2027,7 @@ jugador.getWeight = function(player) {
     }
 
     return toret;
-}
+};
 
 var objCarta = ctrl.creaObj(
         "carta",
@@ -2057,18 +2057,18 @@ var objBrujula = ctrl.creaObj(
     "br&uacute;jula",
     [ "compas", "brujula" ],
     "Tu fiable br&uacute;jula.",
-        jugador,
+    jugador,
     Ent.Portable
 );
 
 objBrujula.preDrop = function() {
         return "No puedes hacer eso: necesitas orientarte.";
-}
+};
 
 objBrujula.preExamine = function() {
         var loc = ctrl.lugares.devLocActual();
         return objBrujula.desc + " " + actions.getAction( "exits" ).exe();
-}
+};
 
 // Arranque ------------------------------------------------------------
 ctrl.personas.cambiaJugador( jugador );
