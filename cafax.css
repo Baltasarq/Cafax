@@ -1,0 +1,141 @@
+/* Cafax colors and styles */
+
+body {
+    margin: 5%;
+    background-color: black;
+    color: white;
+    font-familiy: serif;
+	font-size:16pt;
+	cursor: crosshair;
+}
+
+/* Hiperenlaces */
+a {
+	color: cyan;
+	text-decoration: none;
+	cursor: crosshair
+}
+
+a:hover {
+	color: blue;
+	text-decoration: none;
+	cursor: crosshair
+}
+
+a:visited {
+	color: cyan;
+	text-decoration: none;
+	cursor: crosshair
+}
+
+/* Intro div, before game */
+#dvIntro {
+    width:70%;
+	text-align:center;
+	display: block
+}
+
+#hrIntroSeparator {
+	color:#000044;
+	background-color: #000044;
+	height:3px;
+	border:0
+}
+
+#btBoot {
+	color:#770000;
+	font-weight:bold
+}
+
+/* Game title */
+#dvTitle {
+    width:70%;
+    margin: 5%;
+	font-size:18pt;
+	color:gray
+}
+
+@media screen and (max-width: 800px) {
+    #dvTitle, #dvId {
+        display: none !important;
+    }
+}
+
+/* Name of the room */
+#dvId {
+    width:100%;
+	color: lightgray;
+	font-style:italic;
+    font-weight:bold;
+}
+
+/* Game div */
+#dvFi {
+	width:80%;
+    margin-left: 5%;
+    margin-right: 5%
+}
+
+#hrFiSeparator {
+	color:#000044;
+	background-color:#000044;
+	height:3px;
+	border:0
+}
+
+/* Image */
+#dvPic {
+	width:100%;
+	height:40%;
+	text-align:center
+}
+
+/* Description text for current room */
+#dvDesc  {
+	color: yellow;
+	width:100%;
+    text-align: justify;
+}
+
+/* Game's answer text */
+#dvAnswer {
+    color: green;
+	width:100%;
+    height: 150px;
+    font-size: 14pt;
+    text-align: justify;
+    overflow-y: auto;
+}
+
+/* Input section, prompt, icons... */
+#dvInput {
+	color:white;
+	background-color:black;
+	width:100%;
+	font-size:20px;
+}
+
+#edInput {
+	width:90%;
+	color: yellow;
+	background-color:black;
+	border:none;
+	font-size:20px;
+	border:1px dotted gray;
+	border-radius: 14pt;
+	padding:6px
+}
+
+#dvObjects {
+    font-family: monospace;
+    font-size: 16pt;
+    text-align: center
+}
+
+/* Error section, this is normally not seen by players */
+#dvError {
+	color:white;
+	background-color:red;
+	width:100%;
+	font-size:24px;
+}

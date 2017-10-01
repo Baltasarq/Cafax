@@ -1,0 +1,373 @@
+Desierto
+.recurso_grafico "../res/desierto.png"
+Entre arenas abrasadoras y un sol implacable se elevan majestuosas los sepulcros de Cafax y Aceps.
+
+> s
+
+Entrada
+.recurso_grafico "../res/cafax.png"
+Ante la entrada de Cafax. La aventura comienza...
+
+> s
+
+Escaleras
+.recurso_grafico "../res/escaleras.png"
+Ante ti, las escaleras que conducen al oscuro interior de Cafax.
+
+> s
+
+Largo corredor
+.recurso_grafico "../res/corredor.png"
+El largo corredor te adentra en la oscuridad.
+
+> ex linterna
+Es de metal.
+> coge linterna
+Cogido.
+> ex pedernal
+De poco peso y fuerte tonalidad gris.
+> coge pedernal
+Cogido.
+> s
+
+Final del corredor
+.recurso_grafico "../res/fin_corredor.png"
+El final del corredor revela nuevos detalles de grandeza y majestuosidad.
+
+> o a Pasadizo bajo
+> s
+
+Estrecho pasadizo
+.recurso_grafico "../res/pasadizo_estrecho.png"
+Este estrecho pasadizo conduce a una zona superior.
+
+> arriba
+
+Antesala
+.recurso_grafico "../res/antesala.png"
+[Si subes con la linterna encendida, la bicha te pica y mueres]
+El gran grosor de los muros transmite un fuerte sentimiento de solidez y seguridad. Una breve brecha sobre ti proporciona algo de luz, aunque no puedes identificar su procedencia exacta.
+
+> ex serpiente
+Es una cobra, realmente agresiva y con feo aspecto.
+> e a Estancia
+> s
+
+Sala de la vida eterna
+.recurso_grafico "../res/sala_funeraria.png"
+Animales momificados escoltan a la momia en su eterno viaje. Innumerables grabados te rodean.
+
+> grabados_vida_eterna
+Te tomas tu tiempo para tratar de entenderlos. Casi todos hacen referencia al viaje a la eternidad tras la muerte, si bien uno de ellos atosiga poderosamente tu mente. Dice: "Solo lo bueno muere joven, solo lo malvado parece vivir para siempre."
+
+> ex animales
+Puedes ver las semillas.
+> ex semillas
+Son semillas de trigo.
+> coge las semillas
+Cogido.
+
+.FINLOC
+
+Estancia
+.recurso_grafico "../res/estancia.png"
+[El trigo tiene que estar dentro de las vasijas.]
+Dos vasijas policromadas flanquean una de las puertas de la estancia.
+
+> o a Antesala
+> ex vasijas
+Llenas de trigo.
+> ex trigo
+Negro y podrido.
+> coge trigo
+Cogido.
+> s
+
+Sala del cofre
+.recurso_grafico "../res/sala_cofre.png"
+[Sala con luz. La copa se encuentra dentro del cofre, donde hay que meter la espada para abrirlo.]
+Recipientes con aceite sagrado iluminan un cofre con muchos grabados.
+
+> ex recipientes
+Contienen aceite sagrado, manteniendo una llama sempiterna.
+> ex cofre
+Hecho en piedra y con grabados en su alrededor. En lugar de una cerradura, solo se distingue una fina ranura.
+> ex grabados
+Los grabados no parecen claros, hablan de un brebaje de la virtud que el sacerdote no pudo encontrar.
+> ex copa
+Se trata de la copa de la virtud, teniendo en cuenta sus grabados.
+> coge la copa
+Vale.
+
+> o
+
+Sala de la momia
+.recurso_grafico "../res/sala_momia.png"
+[La momia te mata tras pasar un num. de turnos]
+En una tumba en la pared, una momia duerme eternamente.
+
+> ex grabados_momia
+Los grabados indican que esta momia era el sacerdote mayor del rey Aceps I. Algo en alguno de los grabados te hace deducir que no era muy querido. Es cierto: en uno de ellos se explica que sobre la momia pesa la magia del maldito, y que nunca va a poder merecer el viaje eterno.
+
+> ex tumba
+Dentro de la tumba, se encuentra una momia con atuendo de sacerdote.
+
+> ex momia
+Te provoca mucho, mucho miedo. Parece quebradiza, a punto de convertirse en polvo, y amenazadora, a un tiempo.
+
+> ex llave
+Una llave de plata.
+> coge llave
+Cogido.
+
+.FINLOC
+
+Pasadizo bajo
+.recurso_grafico "../res/pasadizo_bajo.png"
+[La barra apuntala el techo. Para cogerla, debes golpearla o tirar de ella.]
+Un pasillo bajo y estrecho comunica con otra sala.
+
+> e a Final del corredor
+> ex barra
+De metal, y con gran dureza.
+> coge la barra
+> Cogida.
+> s
+
+Pasillo profundo
+.recurso_grafico "../res/pasillo_profundo.png"
+Parece enterrarse en las profundidades de la oscuridad.
+
+> baja
+
+Gran sala
+.recurso_grafico "../res/sala_grandeza.png"
+Te sientes insignificante ante la grandeza de las salas que se presentan ante tus ojos.
+
+> s a Gran pasaje
+> o
+
+Pasaje de los grabados
+.recurso_grafico "../res/pasaje_grabados.png"
+[En una de las paredes, cuelga una antigua antorcha.]
+Vestigios de antiguos grabados en la piedra, parece advertirte de algo.
+
+> ex petroglifos
+Veamos... "La cola del gran lagarto es vital para vencer con zapatillas de esparto." Mmmm... puede que tus conocimientos de los grabados del antiguo egicpio se encuentren oxidados...
+
+> ex antorcha
+Un tanto vieja, pero puede servir.
+
+> coge antorcha
+Vale.
+
+> o
+
+Rampa
+.recurso_grafico "../res/sala_rampa.png"
+[La cuerda se descubre al examinar la rampa]
+La pronunciada rampa que asciende hacia el sur, parece haber sido hecha para arrastrar pesados objetos.
+
+> ex cuerda
+Una fuerte cuerda.
+
+> coge cuerda
+Bueno.
+
+> s
+
+Altar de ofrendas
+.recurso_grafico "../res/sala_altar_ofrendas.png"
+En el recipiente arde la llama eterna, gracias al aceite en su interior.
+
+> ex recipiente
+En el recipiente encuentras el aceite sagrado.
+
+> ex aceite
+Es del tipo que arde.
+
+> coge aceite
+Cogido.
+
+> e
+
+Diminuta sala
+.recurso_grafico "../res/sala_peque.png"
+Un reducido recinto permite avanzar de este a oeste. La altura del techo es la normal, pero en este espacio apenas cabe una persona.
+
+> ex tabla
+Madera podrida por el tiempo.
+
+> coge tabla
+Hecho.
+
+> e
+
+Gran pasaje
+.recurso_grafico "../res/gran_pasaje.png"
+De esta sala parten pasajes en todas direcciones. Al este y al sur, los pasajes son guardados por sendas puertas.
+
+> s a Sala alargada
+> n a Gran sala
+
+> ex puertas
+La puerta al este es de fuertes remaches de cobre, mientras la del sur apenas puede calificarse de portillo.
+
+> ex portillo
+Bloquea el paso hacia el sur.
+
+> ex puerta
+De fuertes remaches de cobre, bloquea el paso al oeste.
+
+> e
+
+Sala de la luminaria
+.recurso_grafico "../res/sala_luminaria.png"
+Una gran sala que tiene en el centro de su pared norte un hueco que probablemente se usaba para iluminar la estancia.
+
+> ex hueco
+Dentro del hueco quedan antiguas brasas y carboncillos.
+
+> ex brasas
+Dentro del hueco, permiten hacer arder una llama.
+
+> s a Sala de los vivos
+
+> e
+
+Pasarela
+.recurso_grafico "../res/sala_pasarela.png"
+[En el original, tienes que pasar con pocos objetos, y rapidamente... Mejor dejar en este lugar tan solo el tener que pasar con un objeto de cada vez.]
+La gran sala permite avanzar de este a oeste, atravesando una pasarela hecha con cuerdas y madera. El abismo no parece tener fin, es realmente insondable.
+
+> ex abismo
+Uy, miedo me da.
+
+> ex pasarela
+El tiempo no la ha tratado demasiado bien. La madera no tiene buen aspecto, si bien las cuerdas parecen aguantar bastante bien.
+
+> e
+
+Sala del sepulcro
+.recurso_grafico "../res/sala_sepulcro.png"
+[Es necesario atar la cuerda al poste para poder bajar.]
+Un inmenso sepulcro de piedra se encuentra en el medio de esta gran sala,
+presidiendo majestuosamente el lugar.
+
+> ex poste
+Es un fuerte poste de piedra.
+
+> ex pozo
+La parte este de esta sala se configura como un ancho pozo, de cuyo fondo ascienden fuertes y delgadas columnas. Nunca ha aparecido algo como esto en tus expediciones, es raro...
+
+> ex sepulcro
+Excavado en la roca del suelo, realmente parecen haber pasado centurias.
+
+> ex pictogramas
+Parece imposible, pero... traduciendo poco a poco los pictogramas, parece ser que en este lugar yace el rey Aceps I. No puede ser...
+
+> s a Sala del dios rey
+> baja
+
+Pozo de las almas
+.recurso_grafico "../res/pozo.png"
+Este lugar resulta realmente triste y desolado. Algunos pictogramas decoran las paredes.
+
+> ex columnas
+Suben interminables. En un hueco en una de ellas, ves un anillo engarzado en la piedra.
+
+> coge anillo
+Cogido.
+
+> ex anillo
+Precioso... casi se puede decir que parece... un anillo de compromiso.
+
+> ex glifos
+Traduces lentamente: "Mi amada, mi anillo, y el traidor. Haz retornar mi felicidad y el descanso eterno." Lo cierto es que parece transmitir un sentimiento de agresiva tristeza.
+
+.FIN
+
+Sala alargada
+.recurso_grafico "../res/sala_alargada.png"
+Las paredes de una alta y alargada sala parecen cernirse sobre ti.
+
+> n a Gran pasaje
+> s
+
+Acceso a la trampa
+.recurso_grafico "../res/sala_trampa.png"
+Hacia el sur ves algo inquietante... parece una trampa de afilados pinchos...
+> ex trampa
+Parece creada para eliminar a los intrusos.
+> s
+
+Trampa
+.recurso_grafico "../res/trampa.png"
+[Para pasar la trampa, debes meter la copa en la abertura, tener la barra/palanca, y haber puesto el anillo en la momia.]
+Alrededor de la trampa aparecen grabados de todo tipo. Una abertura de forma oblonga rompe la uniformidad de una de las paredes.
+
+> ex abertura
+Tiene forma oblonga.
+
+> ex petroglifos_trampa
+Descrifrando los grabados, te das cuenta de que es el acceso a Aceps.
+
+.FIN
+
+Sala de los vivos
+.recurso_grafico "../res/sala_anubis.png"
+Anubis, dios del reino de los muertos, guarda esta sala de los vivos. Se trata de un recinto cotidiano en los sepulcros de los faraones, en el que se alaba y recrea el goce de la vida, como antesala de la muerte.
+
+> n a Sala de la luminaria
+
+> s
+
+Sala funeraria
+.recurso_grafico "../res/sala_papiro_funerario.png"
+En las paredes se aprecian los grabados de un papiro.
+
+> ex papiro
+Compila antiguos ritos funerarios. Uno de ellos te suena por lo manido: "La muerte, solo es el principio."
+
+> ex sandalia
+Una sandalia media podrida.
+
+.FIN
+
+Sala del dios rey
+.recurso_grafico "../res/sala_dios_path.png"
+Esta sala parece completamente dedicada a la vida del rey Aceps I. En la imagen, parece querer ponerse un anillo, pesando sobre su cabeza una espada con... una copa.
+
+> ex imagen
+Parece que el rey desea ponerse un anillo, cosa que de alguna forma se le impide.
+
+> n a Sala del sepulcro
+> s
+
+Sala del espacio
+.recurso_grafico "../res/sala_hueco_pared.png"
+Gracias a un boquete en la pared, se aprecia la sala hacia el sur. Es como si se hubiera hecho aposta, un ventanal para que la imagen del rey pudiese contemplar el altar.
+
+> ex altar_falso
+No puedes verlo bien del todo desde este lugar, pero se adivina de piedra.
+
+> s
+
+Sala del altar de piedra
+.recurso_grafico "../res/sala_altar_piedra.png"
+[La espada aparece clavada en el altar]
+El suelo se halla encharcado alrededor del altar de piedra.
+
+> ex altar
+Es un altar de piedra, con varios grabados. Tiene una estrecha ranura.
+
+> ex grabados_altar
+Lees, interesado: "Y del sacerdocio desciende la espada del traidor, tratando de robar el amor del rey."
+
+> ex espada
+Es de metal. La encuentras clavada en el altar.
+
+> coge espada
+Vale.
+
+.FIN
